@@ -1030,8 +1030,6 @@ function diplayWord() {
     finalMessage.innerText = "Congratulations! You Won! 😎";
     popup.style.display = "flex";
   }
-
-  console.log(wordEl.innerText, innerWord);
 }
 
 function gameOver() {
@@ -1098,11 +1096,7 @@ window.addEventListener("keydown", (e) => {
 
     popup.style.display = "none";
   });
-
-  console.log(correctLetters);
-  console.log(wrongLetters);
 });
 
 diplayWord();
 
-console.log(words[randomIndex]);
