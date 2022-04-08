@@ -1044,6 +1044,7 @@ function gameOver() {
 
     setTimeout(() => {
       popup.style.display = "flex";
+      letter.style.display = 'none'
     }, 500);
   }
 }
@@ -1104,6 +1105,7 @@ window.addEventListener("keydown", (e) => {
     updateWrongLettersEl();
     console.log(word)
     popup.style.display = "none";
+    letter.style.display = 'flex'
   });
 });
 
