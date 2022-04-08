@@ -9,7 +9,10 @@
   </head>
   <body>
     <h1>Hangman</h1>
-    <p>Find the hidden word - Enter a letter</p>
+    <p>Find the hidden word </p>
+    <div class="score-container">
+      <h3>Your score: <span id="score">0</span></h3>
+    </div>
     <div class="game-container">
       <svg height="250" width="200" class="figure-container">
         <!-- ROD -->
@@ -34,7 +37,7 @@
       <div class="word" id="word"></div>
       
     </div>
-
+    <input class="input-letter" type="text" id="letter" name="letter" maxlength="1" placeholder=" Enter a letter">
     <!-- Final Message Container -->
     <div class="popup-container" id="popup-container">
       <div class="popup">

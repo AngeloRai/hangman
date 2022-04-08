@@ -5,6 +5,8 @@ const popup = document.getElementById("popup-container");
 const notification = document.getElementById("notification-container");
 const drippingContainer = document.getElementById("dripping-container");
 const finalMessage = document.getElementById("final-message");
+const scoreEl = document.getElementById('score')
+const letter = document.getElementById('letter')
 
 const figureParts = document.querySelectorAll(".figure-part");
 const randomIndex = Math.floor(Math.random() * 1000) + 1;
@@ -1013,6 +1015,7 @@ const words = [
 let word = words[randomIndex];
 const correctLetters = [];
 const wrongLetters = [];
+let score = 0
 
 function diplayWord() {
   wordEl.innerHTML = word
@@ -1029,6 +1032,9 @@ function diplayWord() {
   if (innerWord === word) {
     finalMessage.innerText = "Congratulations! You Won! 😎";
     popup.style.display = "flex";
+    score = word.length * 10 + score
+    console.log(score);
+    scoreEl.innerText = score
   }
 }
 
@@ -1083,6 +1089,9 @@ window.addEventListener("keydown", (e) => {
         showNotification();
       }
     }
+    setTimeout(() => {
+      letter.value = ""
+    }, 1000);
   }
 
   playAgainBtn.addEventListener("click", () => {
@@ -1093,10 +1102,12 @@ window.addEventListener("keydown", (e) => {
 
     diplayWord();
     updateWrongLettersEl();
-
+    console.log(word)
     popup.style.display = "none";
   });
 });
 
 diplayWord();
+
+console.log(word)
 
